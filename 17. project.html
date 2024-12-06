@@ -1,0 +1,51 @@
+<script>
+    class BankAccount {
+  // Constructor to initialize the account details
+  constructor(bankName, ifsc, branch, accountNo, balanceHistory, balanceDate, deposit, withdraw, username) {
+    this.bankName = bankName;
+    this.ifsc = ifsc;
+    this.branch = branch;
+    this.accountNo = accountNo;
+    this.balanceHistory = balanceHistory;
+    this.balanceDate = balanceDate;
+    this.deposit = deposit;
+    this.withdraw = withdraw;
+    this.username = username;
+  }
+
+  // Method to display account details
+  displayAccountDetails() {
+    console.log(`Bank Name: ${this.bankName}`);
+    console.log(`IFSC Code: ${this.ifsc}`);
+    console.log(`Branch: ${this.branch}`);
+    console.log(`Account Number: ${this.accountNo}`);
+    console.log(`Username: ${this.username}`);
+    console.log(`Balance History: ${this.balanceHistory}`);
+    console.log(`Balance Date: ${this.balanceDate}`);
+    console.log(`Deposit: ${this.deposit}`);
+    console.log(`Withdraw: ${this.withdraw}`);
+  }
+
+  // Class method to create a new BankAccount instance using the given data
+  static fromData() {
+    return new BankAccount(
+      "PNB",        // Bank Name
+      "PNB001",     // IFSC Code
+      "Amreli",     // Branch
+      "180180180",  // Account Number
+      5000,         // Balance History
+      "2/12/24",    // Balance Date
+      200,          // Deposit
+      50,           // Withdraw
+      "Ramesh"      // Username
+    );
+  }
+}
+
+// Creating an instance using the class method
+const account = BankAccount.fromData();
+
+// Displaying the account details
+account.displayAccountDetails();
+
+</script>                           
